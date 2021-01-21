@@ -1,0 +1,10 @@
+* {
+    box-sizing:  border-box; /* This ensures padding and border are included in width & height of elements*/
+}
+ .container {
+     display: grid;
+     grid-template-columns: 200px;
+     grid-template-rows: 100px, 100px, 70px, 40px;
+     grid-gap: 2px;
+}
+
