@@ -47,10 +47,14 @@ body {
     font-family: var(--ff-primary);
     font-size: var(--fs-body);
     line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 section {
     padding: 5em 2em;
+    max-width: 100%;
 }
 
 img {
@@ -142,8 +146,6 @@ h3 {
     display: flex;
     justify-content: space-between;
     padding: 1em;
-    background: var(--clr-dark);
-    max-width: 100%;
 }
 
 header {
@@ -187,10 +189,6 @@ nav {
     margin: 10px;
 }
 
-/*.nav__link:hover {
-    color: var(--clr-accent);
-}*/
-
 .nav-toggle {
     padding: .25em;
     background: transparent;
@@ -209,14 +207,6 @@ nav {
     position: fixed;
 }
 
-/*.nav-open .hamburger {
-    transform: rotate(.625turn);  /*try do it with percentages */
-/*}*/
-
-/*.nav-open .hamburger::before {
-    transform: rotate(90deg) translateX(-6px);
-}*/
-
 .hamburger {
     display: block;
     position: relative;
@@ -230,7 +220,6 @@ nav {
     width: 2em;
     height: 3px;
     border-radius: 1em;
-    /*transition: transform 250ms ease-in-out;*/
 }
 
 .hamburger::before,
@@ -323,7 +312,7 @@ nav {
 @media (min-width: 900px) {
     .services {
         display: flex;
-        max-width: 1000px;
+        max-width: 100%;
         margin-left: auto;          /* margin-left and margin-right set to auto so they don't override margin-bottom on bigger screens */
         margin-right: auto;
     }
