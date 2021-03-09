@@ -13,7 +13,7 @@
     --fw-reg: 300;
     --fw-bold: 900;
 
-    --clr-light: #fff;
+    --clr-light: #f4e8ec;
     --clr-dark: #303030;
     --clr-accent: #16e0bd;
 
@@ -25,7 +25,7 @@
     --bs: 0.25em 0.25em 0.75em rgba(0,0,0,.25);
 }
 
-@media (min-width:800px) {
+@media (min-width:900px) {          /*Changing the fonts at 800px*/
     :root {
         --fs-h1: 4.5rem;
         --fs-h2:  3.75rem;
@@ -54,7 +54,7 @@ section {
 }
 
 img {
-    display: block;
+    display: block;                 /*To avoid images stretching for large viewports*/
     max-width: 100%;
 }
 
@@ -142,11 +142,11 @@ h3 {
     display: flex;
     justify-content: space-between;
     padding: 1em;
-    background: red;
+    background: var(--clr-dark);
 }
 
 header {
-    max-height: 100px;
+    max-height: .7vw;
 }
 
 nav {
@@ -157,7 +157,8 @@ nav {
     bottom: 0;
     left: 0;
     right: 0;
-    z-index: 100;
+    z-index: 100;        /*sits on top of everything */
+    height: 70px;
 
     transform: translate(100%);
     transition: transform 250ms cubic-bezier(.5, 0, .5, 1);
@@ -167,8 +168,8 @@ nav {
     list-style: none;
     display: flex;
     height: 100%;
-    flex-direction: column;
-    justify-content: space-evenly;
+    flex-direction: row;
+    justify-content: center;
     align-items: center;
     margin: 0;
     padding: 0;
@@ -181,9 +182,13 @@ nav {
     text-decoration: none;
 }
 
-.nav__link:hover {
-    color: var(--clr-accent);
+.nav_item {
+    margin: 8px;
 }
+
+/*.nav__link:hover {
+    color: var(--clr-accent);
+}*/
 
 .nav-toggle {
     padding: .25em;
@@ -203,13 +208,13 @@ nav {
     position: fixed;
 }
 
-.nav-open .hamburger {
+/*.nav-open .hamburger {
     transform: rotate(.625turn);  /*try do it with percentages */
-}
+/*}*/
 
-.nav-open .hamburger::before {
+/*.nav-open .hamburger::before {
     transform: rotate(90deg) translateX(-6px);
-}
+}*/
 
 .hamburger {
     display: block;
@@ -224,7 +229,7 @@ nav {
     width: 2em;
     height: 3px;
     border-radius: 1em;
-    transition: transform 250ms ease-in-out;
+    /*transition: transform 250ms ease-in-out;*/
 }
 
 .hamburger::before,
@@ -248,10 +253,6 @@ nav {
     box-shadow: var(--bs);
 }
 
-.section__subtitle--intro {
-    display: inline-block;
-}
-
 @media (min-width: 600px) {
     .intro {
         display: grid;
@@ -272,7 +273,7 @@ nav {
     .section__subtitle--intro {
         align-self: start;              
         grid-column: -1 / 1;
-        grid-row: 2;             /* moves data engineer photo under pic */
+        grid-row: 2;             /* moves data engineer photo under text */
         text-align: right;
         position: relative;         /*learn absolute position an relative positioning */
         left: -1.5em;
@@ -286,7 +287,7 @@ nav {
     background-image: url(../img/background-what-i-do.svg);
     background-blend-mode: multiply;
     background-size: cover;         /* To make sure pic doesnt repeat itself */
-    color: var(--clr-accent);
+    color: var(--clr-light);
     text-align: center;
 }
 
@@ -306,7 +307,7 @@ nav {
 }
 
 .services {
-    margin-bottom: 3em;
+    margin-bottom: 2em;
 }
 
 .service {
@@ -314,7 +315,11 @@ nav {
     margin: 0 auto;
 }
 
-@media (min-width: 800px) {
+.service > ul {
+    list-style: none;
+}
+
+@media (min-width: 900px) {
     .services {
         display: flex;
         max-width: 1000px;
@@ -343,7 +348,7 @@ nav {
             "title img"
             "subtitle img"
             "text img";
-        grid-column-gap: 2em; 
+        grid-column-gap: 1em; 
     }
 
     .section__title--about {
@@ -371,17 +376,21 @@ nav {
 
 .my-work {
     background-color: var(--clr-dark);
-    color: var(--clr-light);
+    color: var(--clr-accent);
     text-align: center;
+}
+
+.section__subtitle--work {
+    color: var(--clr-light);
 }
 
 .portfolio {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-columns: repeat(6, minmax(50px, 200px));
+    grid-column-gap: 1.2em;
 }
 
 .portfolio__item {
-    background: var(--clr-accent);
     overflow: hidden;
 }
 
@@ -398,7 +407,7 @@ nav {
 
 .portfolio__img:hover,
 .portfolio__item:focus .portfolio {        /* when the portfolio item is on focus -- tab -- .portfolio__img */
-    transform: scale(1.2);
+    transform: scale(1.1);
     opacity: .5;
 }
 
@@ -407,7 +416,7 @@ footer {
     background: #111;
     color: var(--clr-accent);
     text-align: center;
-    padding: 2.5em 0;
+    padding: 2em 0;
 }
 
 .footer__link {
