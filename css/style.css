@@ -143,6 +143,7 @@ h3 {
     justify-content: space-between;
     padding: 1em;
     background: var(--clr-dark);
+    max-width: 100%;
 }
 
 header {
@@ -183,7 +184,7 @@ nav {
 }
 
 .nav_item {
-    margin: 8px;
+    margin: 10px;
 }
 
 /*.nav__link:hover {
