@@ -76,8 +76,9 @@ strong {
     padding: .5em 2.5em;
     background: var(--clr-accent);
     color: var(--clr-dark);
+    font-size: .7rem;
     text-decoration: none;   /* to remove line that shows it's a link */
-    font-size: .8rem;
+    
     cursor: pointer;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -148,10 +149,6 @@ h3 {
     padding: 1em;
 }
 
-header {
-    max-height: .7vw;
-}
-
 nav {
     position: fixed;
     background: var(--clr-dark);
@@ -161,7 +158,7 @@ nav {
     left: 0;
     right: 0;
     z-index: 100;        /*sits on top of everything */
-    height: 70px;
+    height: 9vh;
 
     transform: translate(100%);
     transition: transform 250ms cubic-bezier(.5, 0, .5, 1);
@@ -170,8 +167,7 @@ nav {
 .nav__list {
     list-style: none;
     display: flex;
-    height: 100%;
-    flex-direction: row;
+    
     justify-content: center;
     align-items: center;
     margin: 0;
@@ -181,12 +177,12 @@ nav {
 .nav__link {
     color: inherit;
     font-weight: var(--fw-bold);
-    font-size: var(--fs-h3);
+    font-size: 3vh;
     text-decoration: none;
 }
 
 .nav_item {
-    margin: 10px;
+    margin: 2%;
 }
 
 .nav-toggle {
@@ -256,7 +252,7 @@ nav {
     }
     .intro__img {
         grid-area: img;
-        min-width: 250px;
+        min-width: 300px;
         position: relative;
         z-index: 2;
     }
@@ -265,9 +261,13 @@ nav {
         grid-column: -1 / 1;
         grid-row: 2;             /* moves data engineer photo under text */
         text-align: right;
-        position: relative;         /*learn absolute position an relative positioning */
+        position: relative;         
         left: -1.5em;
         width: calc(100% + 1.5em)
+    }
+
+    .nav__link {
+        font-size: var(--fs-h3);
     }
 }
 
@@ -322,7 +322,7 @@ nav {
 }
 
 .about-me {
-    max-width: 1200px;
+    max-width: 1000px;
     margin: 0 auto;
 }
 
@@ -358,7 +358,7 @@ nav {
     .about-me__img {
         grid-area: img;
         position: relative;
-        z-index: 2;
+        z-index: 3;
     }
 }
 
@@ -368,6 +368,7 @@ nav {
     background-color: var(--clr-dark);
     color: var(--clr-accent);
     text-align: center;
+    min-height: 55vh;
 }
 
 .section__subtitle--work {
@@ -375,30 +376,9 @@ nav {
 }
 
 .portfolio {
-    display: grid;
-    grid-template-columns: repeat(6, minmax(50px, 200px));
+    display: flex;
+    grid-template-columns: repeat(auto-fit, minmax(40px, 200px));
     grid-column-gap: 1.2em;
-}
-
-.portfolio__item {
-    overflow: hidden;
-}
-
-.portfolio__img {
-    transition:
-        transform 750ms cubic-bezier(.5, 0,.5, 1),
-        opacity 250ms linear;
-}
-
-.portfolio__item:focus {
-    position: relative;
-    z-index: 2;
-}
-
-.portfolio__img:hover,
-.portfolio__item:focus .portfolio {        /* when the portfolio item is on focus -- tab -- .portfolio__img */
-    transform: scale(1.1);
-    opacity: .5;
 }
 
 /* Footer */
