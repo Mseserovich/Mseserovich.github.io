@@ -253,6 +253,7 @@ nav {
     .intro__img {
         grid-area: img;
         min-width: 300px;
+        min-height: 230px;
         position: relative;
         z-index: 2;
     }
