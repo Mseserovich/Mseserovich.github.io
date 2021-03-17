@@ -420,3 +420,7 @@ footer a {
     margin: .5em;
 }
 
+.modal {
+    display: none;
+}
+
