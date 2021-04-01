@@ -426,11 +426,20 @@ footer {
     font-weight: var(--fw-bold);
 }
 
-footer a {
-    color: inherit;
-    text-decoration: none;
+.footer__tweet {
+    color: #1DA1F2;
+    margin: 0 1em 0 1em;
 }
 
+.footer__face {
+    color: #4267B2;
+    margin: 0 1em 0 0;
+}
+
+.footer__insta {
+    color: #8a3ab9;
+    margin: 0 1em 0 1em;
+}
 .footer__link:hover,
 .social-list__link:hover {
     opacity: .7;
