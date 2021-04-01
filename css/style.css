@@ -378,14 +378,37 @@ nav {
 
 .portfolio {
     display: flex;
-    grid-template-columns: repeat(auto-fit, minmax(40px, 200px));
-    grid-column-gap: 1.2em;
+    grid-template-columns: repeat(autofit, minmax(50px,1fr));
+    grid-column-gap: 50px;
+}
+.portfolio__item > ul {
+    list-style: none;
+}
+
+@media (max-width: 600px) {
+    .portfolio {
+        display: flex;
+        grid-template-columns: repeat(autofit, minmax(40px, 1fr));
+        grid-column-gap: 1em;
+    }
+    .portfolio__item {
+        min-width: 55px;
+        margin: 0;
+        padding: 0;
+    }
+
+    .portfolio__img {
+        min-width: auto;
+    }
+    ul {
+        display: none;
+    }
 }
 
 /* Footer */
 footer {
     background: #111;
-    color: var(--clr-accent);
+    color: var(--clr-light);
     text-align: center;
     padding: 2em 0;
 }
@@ -409,14 +432,60 @@ footer a {
     list-style: none;           /* I don't want the bullets */
     display: flex;
     justify-content: center;
-    margin: 2em 0 0;
+    margin: 0.8em 0 0;
     padding: 0;
 }
 
 .social-list__item {
-    margin: 0 .5em;
+    margin: .5em;
 }
 
 .social-list__link {
     margin: .5em;
+    color: var(--clr-accent);
 }
+
+.section__subtitle--contact {
+    color: var(--clr-light);
+}
+
+/*Tool tips*/
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    width: auto;
+    background-color: var(--clr-accent);
+    color: var(--clr-dark);
+    font-weight: var(--fw-bold);
+    text-align: center;
+    border-radius: 6px;
+    padding: 4px 4px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  
+  .tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+  }
+  
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+  }
