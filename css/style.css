@@ -381,8 +381,11 @@ nav {
     grid-template-columns: repeat(autofit, minmax(50px,1fr));
     grid-column-gap: 50px;
 }
+
+
 .portfolio__item > ul {
     list-style: none;
+    text-align: left;
 }
 
 @media (max-width: 600px) {
